@@ -1,6 +1,6 @@
 
 const NavItem = props => (
-  <li className="px-2 py-4 hover:bg-slate-500 cursor-pointer">
+  <li className="px-2 py-4 hover:bg-black hover:bg-opacity-50 hover:text-white transition-all duration-300 cursor-pointer">
     <a href={props.href}>
       {props.text}
     </a>
