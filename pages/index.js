@@ -20,7 +20,7 @@ export default function Home() {
           <NavItem href='#Product' text="Liên Lạc"></NavItem>
         </ul>
       </nav>
-      <video className='object-cover w-full h-screen z-0' autoplay='true' playsinline='true' muted='true' loop>
+      <video className='object-cover w-full h-screen z-0' autoPlay playsInline muted loop>
         <source src="intro-short.mov" type="video/mp4" />
       </video>
     </div>
