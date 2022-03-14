@@ -20,6 +20,7 @@ export default function Home() {
     setIsMobile(mobileCheck())
   }, [])
 
+  console.log(isMobile)
   return (
     <div>
       <nav className='fixed w-full top-4 mx-auto flex flex-col text-center z-50'>
@@ -34,13 +35,9 @@ export default function Home() {
       </nav>
       <video className='object-cover w-full h-screen z-0' autoPlay playsInline muted loop>
         {
-          isMobile ??
-          <source src="intro_420p.webm" type="video/webm" /> 
-        }
-        {
           isMobile ?
-          <source src="intro_420p.mov" type="video/mp4" /> :
-          <source src="intro_720p.mov" type="video/mp4" />
+          <source src="intro_420p.webm" type="video/webm" /> :
+          <source src="intro_720p.webm" type="video/webm" />
         }
       </video>
     </div>
