@@ -27,9 +27,8 @@ export default function Home() {
           <NavItem href='#Product' text="Liên Lạc"></NavItem>
         </ul>
       </nav>
-      <video className='object-cover w-full h-screen z-0' autoPlay playsInline muted loop>
-          <source src="intro_420p.webm" type="video/webm" /> 
-          <source src="intro_720p.webm" type="video/webm" />
+      <video className='object-cover w-full h-screen z-0' poster="intro.png" autoPlay playsInline muted loop>
+        <source src="intro_720p.mp4" type="video/mp4" />
       </video>
     </div>
   )
