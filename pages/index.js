@@ -100,7 +100,7 @@ export default function Home() {
                     <H1>
                       PRIVATE MAUI SURF & SUP LESSONS
                     </H1>
-                    <H2 className='pt-4'>
+                    <H2>
                       Your adventure begins here
                     </H2>
                     <p className='pt-4'>
