@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .top-nav-fixed {
+    @apply !fixed bg-black bg-opacity-40 text-white shadow-[0_5px_30px_2px_rgba(0,0,0,0.7)];
+  }
+  .top-nav {
+    @apply !absolute;
+  }
+}
+
 html,
 body {
   padding: 0;
@@ -17,4 +32,8 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.hidden\! {
+  display: none !important;
 }
