@@ -77,7 +77,7 @@ export default function Home() {
                     <NextImage width='100px' height='30px' src='/logo.png' alt='logo' />
                   </div>
                 </NextLink>
-                <ul className='flex flex-row items-center justify-center gap-2'>
+                <ul className='flex flex-col items-center justify-center gap-2 sm:flex-row'>
                   <NavItem href='#toursandlessions' text="Tours & Lessons"></NavItem>
                   <NavItem href='#whatissup' text="About us"></NavItem>
                   <NavItem href='#Product' text="Contact"></NavItem>
@@ -85,8 +85,8 @@ export default function Home() {
                 </ul>
               </nav>
               <div className="absolute w-full h-full backdrop-blur-sm
-               bg-black bg-opacity-10 font-Qwitcher font-bold text-8xl p-2 
-               flex justify-center items-center">
+               bg-black bg-opacity-10 font-Qwitcher font-bold text-4xl p-2 
+               flex justify-center items-center sm:text-6xl">
                 Chèo Trên Núi
               </div>
               <video preload="none" ref={videoRef} className='object-cover w-full h-screen z-0' poster={videoPoster} autoPlay playsInline muted loop>
@@ -94,23 +94,30 @@ export default function Home() {
               </video>
             </div>
             <div className='w-full flex-row'>
-              <section id='toursandlessions' className='pt-40 min-h-screen w-2/3 m-auto'>
-                <div className='flex gap-20'>
-                  <div className='flex-1 text-right'>
+              <section id='toursandlessions' className='pt-40  w-11/12 m-auto sm:w-2/3'>
+                <div className='flex flex-col relative gap-4 py-10 px-2 
+                sm:py-0 sm:px-0 sm:gap-20 sm:flex-row' >
+                  <div className='text-right z-10 sm:flex-1'>
                     <H1>
                       PRIVATE MAUI SURF & SUP LESSONS
                     </H1>
                     <H2>
                       Your adventure begins here
                     </H2>
-                    <p className='pt-4'>
+                    <p className='pt-4 text-white sm:text-black'>
                       We are Maui’s premier ocean activity company and take great pride in offering top-rated, private tours and lessons including Outrigger Canoe and Kayak Tours, Whale Watching, Snorkeling with Turtles, Surfing lessons and Stand Up Paddle Boarding Lessons.
                     </p>
-                    <p className='pt-4'>
+                    <p className='pt-4 text-white sm:text-black'>
                       You can escape from the crowds and experience Maui from a local perspective. Most people come to Maui for this very reason—to really get away.
                     </p>
                   </div>
-                  <div className='w-full flex-1 relative'>
+                  <div className='w-full h-full absolute top-0 right-0 -z-10
+                                transition-all
+                                before:content-[""] before:bg-black before:w-full 
+                                before:h-full before:block before:absolute before:t-0 before:l-0
+                                before:bg-opacity-30 before:rounded-3xl before:z-10
+                                sm:before:content-none
+                                sm:section-content'>
                     <NextImage
                       layout="fill"
                       objectFit="cover"
@@ -119,12 +126,18 @@ export default function Home() {
                       alt='image landing page 1'
                     />
                   </div>
-
                 </div>
               </section>
-              <section id='whatissup' className='pt-20 min-h-screen w-2/3 m-auto'>
-                <div className='flex gap-20'>
-                  <div className='w-full flex-1 relative'>
+              <section id='whatissup' className='pt-10  w-11/12 m-auto sm:pt-40 sm:w-2/3'>
+                <div className='flex flex-col relative gap-4 py-10 px-2 
+                sm:py-0 sm:px-0 sm:gap-20 sm:flex-row' >
+                  <div className='w-full h-full absolute top-0 right-0 -z-10
+                                transition-all
+                                before:content-[""] before:bg-black before:w-full 
+                                before:h-full before:block before:absolute before:t-0 before:l-0
+                                before:bg-opacity-30 before:rounded-3xl before:z-10
+                                sm:before:content-none
+                                sm:section-content'>
                     <NextImage
                       layout="fill"
                       objectFit="cover"
@@ -137,24 +150,24 @@ export default function Home() {
                     <H2>
                       Stand Up Paddle Boarding
                     </H2>
-                    <p className='pt-4'>
+                    <p className='pt-4 text-white sm:text-black'>
                       Stand up paddle boarding on Maui is a great way to explore Maui’s scenic coasts and bays. Choose from one of two amazing locations—Olowalu or Makena—each offering a unique experience and view of Maui. We realize that everyone comes from different backgrounds, with different fitness and comfort levels in the ocean, which is why we offer exclusive and PRIVATE Stand Up Paddle Board (SUP) Tours.
                     </p>
-                    <p className='pt-4'>
+                    <p className='pt-4 text-white sm:text-black'>
                       With our private tours, you will be able to stand up paddle as far and as fast as your ability allows, without feeling like you’re being held back or holding others back. Or, if you choose, just leisurely cruise around and check out numerous Hawaiian green sea turtles that swim by.
                     </p>
-                    <p className='pt-4'>
+                    <p className='pt-4 text-white sm:text-black'>
                       FREE digital photography included
                     </p>
-                    <p className='pt-4'>
+                    <p className='pt-4 text-white sm:text-black'>
                       Our stand up paddle instructors will take photos, so you can relax and enjoy your morning on the water.
                     </p>
                   </div>
 
                 </div>
               </section>
-            </div>
-          </div>
+            </div >
+          </div >
       }
     </>
   )
