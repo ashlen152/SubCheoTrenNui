@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react'
 import NextImage from 'next/image'
-import { H1, H2 } from './components'
+import NextLink from 'next/link'
+import { H1, H2 } from '../components'
 const videoPoster = 'intro.jpg'
 
 const NavItem = props => (
@@ -70,14 +71,12 @@ export default function Home() {
           :
           <div>
             <div className='relative w-screen h-screen' >
-              <nav ref={navRef} className='backdrop-blur-sm absolute 
-              w-full mx-auto px-4 flex flex-row 
-              justify-between items-center z-50 transition-all'>
-                <a href='/#' className='relative rounded-full flex flex-center
-                 bg-amber-400 bg-opacity-50 cursor-pointer
-                 hover:bg-amber-500 hover:scale-125 transition-all'>
-                  <NextImage width='100px' height='30px' src='/logo.png' alt='logo' />
-                </a>
+              <nav ref={navRef} className='backdrop-blur-sm absolute w-full mx-auto px-4 flex flex-row justify-between items-center z-50 transition-all'>
+                <NextLink href='/#' passHref={true} >
+                  <div className='relative rounded-full flex flex-center bg-amber-400 bg-opacity-50 cursor-pointer hover:bg-amber-500 hover:scale-125 transition-all'>
+                    <NextImage width='100px' height='30px' src='/logo.png' alt='logo' />
+                  </div>
+                </NextLink>
                 <ul className='flex flex-row items-center justify-center gap-2'>
                   <NavItem href='#toursandlessions' text="Tours & Lessons"></NavItem>
                   <NavItem href='#whatissup' text="About us"></NavItem>

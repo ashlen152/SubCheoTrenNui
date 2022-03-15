@@ -1,3 +1,5 @@
+import React from 'react';
+
 export const H1 = ({ children }) => (
   <h1 className="font-medium leading-tight text-base mt-0 mb-2 text-slate-600">
     {children}
