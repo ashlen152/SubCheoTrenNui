@@ -18,6 +18,16 @@
   .section-content {
     @apply !relative z-0 h-auto flex-1;
   }
+
+  .breadActive {
+    @apply !w-full rotate-45;
+    @apply before:!w-full before:rotate-90;
+    @apply after:!hidden;
+  }
+
+  .navMenuActive {
+    @apply !flex absolute top-0 w-full mx-auto bg-sky-600 !translate-y-0 transition-transform;
+  }
 }
 
 html,

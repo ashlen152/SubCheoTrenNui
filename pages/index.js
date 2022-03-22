@@ -27,6 +27,8 @@ export default function Home() {
   const videoRef = useRef()
   const lastScrollTop = useRef(0)
   const navRef = useRef()
+  const breadRef = useRef()
+  const listMenuRef = useRef()
 
   const [isLoading, setIsLoading] = useState(true)
 
@@ -62,6 +64,12 @@ export default function Home() {
     }
   }, [])
 
+  const handleClickBread = () => {
+    if (!breadRef.current) return
+    breadRef.current.classList.toggle('breadActive')
+    listMenuRef.current.classList.toggle('navMenuActive')
+  }
+
 
   return (
     <>
@@ -71,13 +79,23 @@ export default function Home() {
           :
           <div>
             <div className='relative w-screen h-screen' >
-              <nav ref={navRef} className='hidden sm:flex backdrop-blur-sm absolute w-full mx-auto px-4  flex-row justify-between items-center z-50 transition-all'>
+              <nav ref={navRef} className='flex backdrop-blur-sm absolute w-full mx-auto py-4 sm:py-0 flex-row justify-between items-center z-50 transition-all'>
                 <NextLink href='/#' passHref={true} >
-                  <div className='relative rounded-full flex flex-center bg-amber-400 bg-opacity-50 cursor-pointer hover:bg-amber-500 hover:scale-125 transition-all'>
+                  <div className='relative ml-4 rounded-full flex flex-center bg-amber-400 bg-opacity-50 cursor-pointer hover:bg-amber-500 hover:scale-125 transition-all'>
                     <NextImage width='100px' height='30px' src='/logo.png' alt='logo' />
                   </div>
                 </NextLink>
-                <ul className='flex flex-col items-center justify-center gap-2 sm:flex-row'>
+                <button className='mr-4 sm:hidden relative w-[25px] h-[25px] z-50' onClick={handleClickBread}>
+                  <span ref={breadRef} className='w-full h-[2px] bg-black block transition-all
+                  before:content-[""] before:w-[125%] before:h-[2px]
+                  before:bg-black before:absolute before:top-0 before:right-0
+                  before:transition-all
+                  after:content-[""] after:w-[75%] after:h-[2px] after:bg-black 
+                  after:absolute after:bottom-0 after:right-0
+                  after:transition-all'
+                  ></span>
+                </button>
+                <ul ref={listMenuRef} className='absolute top-0 w-full flex transition-all -translate-y-full sm:mr-4 sm:translate-y-0 sm:relative sm:w-auto sm:flex flex-col items-center justify-center gap-2 sm:flex-row'>
                   <NavItem href='#toursandlessions' text="Tours & Lessons"></NavItem>
                   <NavItem href='#whatissup' text="About us"></NavItem>
                   <NavItem href='#Product' text="Contact"></NavItem>

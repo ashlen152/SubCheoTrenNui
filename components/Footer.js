@@ -9,12 +9,9 @@ export const Footer = () => {
     justify-between mt-20 bg-sky-900 bg-opacity-60  text-white
     sm:py-0 sm:gap-0text-center'>
       <div className='flex flex-col'>
-        <div className='flex flex-col w-full gap-2 sm:flex-row sm:py-6'>
+        <div className='flex flex-col w-full justify-center sm:flex-row sm:py-6'>
           <div className='image-container sm:w-60'>
             <Image src='/banner.png' alt='footer banner' layout='responsive' width='1200' height='400' />
-          </div>
-          <div className='image-container sm:w-60'>
-            <Image src='/m7land.png' alt='footer banner m7 land' layout='responsive' width='1200' height='400' />
           </div>
         </div>
         <div className='flex flex-col gap-2 text-center mt-4 sm:text-4xl sm:font-light'>
@@ -43,9 +40,9 @@ export const Footer = () => {
             <Phone value="0373750953"></Phone> | <Phone value="0911258379"></Phone> | <Phone value="0704417808"></Phone>
           </div>
         </div>
-        <div className='flex gap-4 justify-center'>
+        <div className='flex gap-4 justify-center text-xl'>
           <span>
-            <a href="#" className="fa fa-facebook"> </a>
+            <a href="https://www.facebook.com/Ch%C3%A8o-Tr%C3%AAn-N%C3%BAi-103159982300129" className="fa fa-facebook"> </a>
           </span> |
           <span>
             <a href="#" className="fa fa-youtube"> </a>
