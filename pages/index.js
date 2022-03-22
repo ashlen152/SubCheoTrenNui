@@ -5,7 +5,7 @@ import { H1, H2 } from '../components'
 const videoPoster = 'intro.jpg'
 
 const NavItem = props => (
-  <li className="px-2 py-4 hover:bg-black hover:bg-opacity-50 hover:text-white transition-all duration-300 cursor-pointer">
+  <li className={`px-2 py-4 hover:bg-black hover:bg-opacity-50 hover:text-white transition-all duration-300 cursor-pointer ${props.className}`}>
     <a href={props.href}>
       {props.text}
     </a>
@@ -71,7 +71,7 @@ export default function Home() {
           :
           <div>
             <div className='relative w-screen h-screen' >
-              <nav ref={navRef} className='backdrop-blur-sm absolute w-full mx-auto px-4 flex flex-row justify-between items-center z-50 transition-all'>
+              <nav ref={navRef} className='hidden sm:flex backdrop-blur-sm absolute w-full mx-auto px-4  flex-row justify-between items-center z-50 transition-all'>
                 <NextLink href='/#' passHref={true} >
                   <div className='relative rounded-full flex flex-center bg-amber-400 bg-opacity-50 cursor-pointer hover:bg-amber-500 hover:scale-125 transition-all'>
                     <NextImage width='100px' height='30px' src='/logo.png' alt='logo' />
@@ -81,12 +81,12 @@ export default function Home() {
                   <NavItem href='#toursandlessions' text="Tours & Lessons"></NavItem>
                   <NavItem href='#whatissup' text="About us"></NavItem>
                   <NavItem href='#Product' text="Contact"></NavItem>
-                  <NavItem href='#Product' text="Book now"></NavItem>
+                  <NavItem href='#' className='text-red-400' text="Book now"></NavItem>
                 </ul>
               </nav>
-              <div className="absolute w-full h-full backdrop-blur-sm
-               bg-black bg-opacity-10 font-Qwitcher font-bold text-4xl p-2 
-               flex justify-center items-center sm:text-6xl">
+              <div className="absolute w-full h-full backdrop-blur-0
+               bg-black bg-opacity-10 font-Qwitcher font-bold text-7xl p-2 
+               flex justify-center items-center sm:text-8xl">
                 Chèo Trên Núi
               </div>
               <video preload="none" ref={videoRef} className='object-cover w-full h-screen z-0' poster={videoPoster} autoPlay playsInline muted loop>
