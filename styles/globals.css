@@ -26,7 +26,17 @@
   }
 
   .navMenuActive {
-    @apply !flex absolute top-0 w-full mx-auto !translate-y-0 transition-transform bg-gradient-to-b from-sky-800  via-sky-600 to-sky-100;
+    @apply !flex absolute top-0 w-full mx-auto !translate-y-0;
+    @apply transition-transform bg-gradient-to-b from-sky-900 via-sky-600 to-transparent;
+  }
+
+  .section-wrapper {
+    @apply pt-40 w-11/12 m-auto sm:w-2/3 flex flex-col relative gap-4 py-10 px-2
+    sm:py-0 sm:px-0 sm:gap-20 sm:even:flex-row sm:odd:flex-row-reverse text-left mt-20 first:mt-20 sm:mt-20 sm:pt-20;
+  }
+
+  .section-wrapper:nth-child(even) > .section-content {
+    @apply text-right;
   }
 }
 

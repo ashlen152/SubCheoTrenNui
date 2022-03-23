@@ -33,6 +33,18 @@ const ImageSection = ({ src, alt }) => (
   </div>
 )
 
+const Section = ({ id, src, alt, children }) => (
+  <section id={id} className='section-wrapper '>
+    <div className='section-content'>
+      {children}
+    </div>
+    <ImageSection
+      className='section-image'
+      src={src}
+      alt={alt}
+    />
+  </section>
+)
 
 const Loading = () => {
   return (
@@ -140,127 +152,93 @@ export default function Home() {
               </video>
             </div>
             <div className='w-full flex-row'>
-              <section id='toursandlessions' className='pt-40  w-11/12 m-auto sm:w-2/3'>
-                <div className='flex flex-col relative gap-4 py-10 px-2 
-                sm:py-0 sm:px-0 sm:gap-20 sm:flex-row' >
-                  <div className='text-right z-10 sm:flex-1'>
-                    <H1>
-                      Hồ Phú Thọ
-                    </H1>
-                    <H2>
-                      Săn sương caffe sáng
-                    </H2>
-                    <p className='pt-4 text-white sm:text-black '>
-                      Chèo thuyền trên độ cao 900m trong làn sương mờ ảo của hồ nước ngọt lớn nhất Huyện Lâm Hà.
-                    </p>
-                    <p className='pt-4 text-white sm:text-black'>
-                      Café sáng đón những tia nắng đầu tiên của ngày mới. Tour này thích hợp với những bạn chưa hề biết chèo Sup bởi vì mặt hồ lặng như gương, nhẹ nhàng, quyến rũ.
-                    </p>
-                  </div>
-                  <ImageSection
-                    src='/img_landing_1.jpg'
-                    alt='image landing page 1'
-                  />
-                </div>
-              </section>
-              <section id='toursandlessions2' className='pt-10  w-11/12 m-auto sm:pt-40 sm:w-2/3'>
-                <div className='flex flex-col relative gap-4 py-10 px-2 
-                sm:py-0 sm:px-0 sm:gap-20 sm:flex-row' >
-                  <ImageSection
-                    src='/img_hoanhon.jpg'
-                    alt='image hoan hon'
-                  />
-                  <div className='flex-1 text-left'>
-                    <H1>
-                      Hồ Phú Thọ
-                    </H1>
-                    <H2>
-                      Đón hoàn hôn trên hồ
-                    </H2>
-                    <p className='pt-4 text-white sm:text-black'>
-                      Tham quan cung hoa Mua Tím lung linh của khu du lịch Long Đỉnh, những đồ chè sát hồ đẹp nhất huyện Lâm Hà, những vườn café hoa trắng xóa và cuối cùng là màn trình diễn ánh sáng HOÀNG HÔN hoành tráng nhất trên mặt hồ nước ngọt lớn nhất huyện Lâm Hà.
-                    </p>
-                    <p className='pt-4 text-white sm:text-black'>
-                      Bạn sẽ có những phút giây vui vẻ nhất và những shots hình ảo ma Lazada nhất mạng xã hội.
-                    </p>
-                    <p className='pt-4 text-white sm:text-black'>
-                      Tour này phù hợp cho các bạn mới tập chơi sup và nhóm bạn trẻ.
-                    </p>
-                  </div>
-                </div>
-              </section>
-              <section id='toursandlessions3' className='pt-10 sm:pt-40  w-11/12 m-auto sm:w-2/3'>
-                <div className='flex flex-col relative gap-4 py-10 px-2 
-                sm:py-0 sm:px-0 sm:gap-20 sm:flex-row' >
-                  <div className='text-right z-10 sm:flex-1'>
-                    <H1>
-                      Hồ Phú Thọ
-                    </H1>
-                    <H2>
-                      Chèo SUP cơ bản
-                    </H2>
-                    <p className='pt-4 text-white sm:text-black'>
-                      Các bạn sẽ được hướng dẫn cách chơi sup và những kỹ năng an toàn khi chơi bộ môn này,
-                    </p>
-                    <p className='pt-4 text-white sm:text-black'>
-                      Ngoài ra các bạn cũng học được cách ngồi, quỳ và đứng trên sup để có thể có được trải nghiệm thú vị nhất và có những shot hình đẹp nhất.
-                    </p>
-                  </div>
-                  <ImageSection
-                    src='/img_sup_coban.jpg'
-                    alt='image co ban'
-                  />
-                </div>
-              </section>
-              <section id='toursandlessions4' className='pt-10 w-11/12 m-auto sm:pt-40 sm:w-2/3'>
-                <div className='flex flex-col relative gap-4 py-10 px-2 
-                sm:py-0 sm:px-0 sm:gap-20 sm:flex-row' >
-                  <ImageSection
-                    src='/img_sup_nangcao.jpg'
-                    alt='image landing page 2'
-                  />
-                  <div className='flex-1 text-left'>
-                    <H1>
-                      Hồ Phú Thọ
-                    </H1>
-                    <H2>
-                      Chèo SUP nâng cao
-                    </H2>
-                    <p className='pt-4 text-white sm:text-black'>
-                      Các bạn sẽ được tập đứng trên mặt nước không cân bằng, tập các skill bốc đầu sup, nhảy santo, bẻ lái nhanh, đứng dọc sup,….
-                    </p>
-                    <p className='pt-4 text-white sm:text-black'>
-                      Và hấp dẫn nhất là giải đua Sup dưới hoàng hôn hồ Phúc Thọ
-                    </p>
-                  </div>
-                </div>
-              </section>
-              <section id='toursandlessions5' className='pt-10 sm:pt-40  w-11/12 m-auto sm:w-2/3'>
-                <div className='flex flex-col relative gap-4 py-10 px-2 
-                sm:py-0 sm:px-0 sm:gap-20 sm:flex-row' >
-                  <div className='text-right z-10 sm:flex-1'>
-                    <H1>
-                      Hồ Phú Thọ
-                    </H1>
-                    <H2>
-                      Khám phá hồ phú thọ
-                    </H2>
-                    <p className='pt-4 text-white sm:text-black'>
-                      Cùng tham quan vẻ đẹp hung vĩ nhất của hồ nước ngọt lớn nhất Lâm Hà
-                    </p>
-                    <p className='pt-4 text-white sm:text-black'>
-                      Các bạn sẽ được khám phá những góc đẹp nhất của hồ này và nếu may mắn các bạn có thể vào vườn trái cây ven hồ để hái và mua trái cây tại vườn
-                    </p>
-                  </div>
-                  <ImageSection
-                    layout="fill"
-                    objectFit="cover"
-                    className='rounded-3xl'
-                    src='/img_landing_2.jpg'
-                    alt='image landing page 2'
-                  />
-                </div>
-              </section>
+              <Section
+                id='toursandlessions'
+                src='/img_landing_1.jpg'
+                alt='image landing page 1' >
+                <H1>
+                  Hồ Phú Thọ
+                </H1>
+                <H2>
+                  Săn sương caffe sáng
+                </H2>
+                <p className='pt-4 text-white sm:text-black '>
+                  Chèo thuyền trên độ cao 900m trong làn sương mờ ảo của hồ nước ngọt lớn nhất Huyện Lâm Hà.
+                </p>
+                <p className='pt-4 text-white sm:text-black'>
+                  Café sáng đón những tia nắng đầu tiên của ngày mới. Tour này thích hợp với những bạn chưa hề biết chèo Sup bởi vì mặt hồ lặng như gương, nhẹ nhàng, quyến rũ.
+                </p>
+              </Section>
+              <Section id='toursandlessions2'
+                src='/img_hoanhon.jpg'
+                alt='image hoan hon'
+              >
+                <H1>
+                  Hồ Phú Thọ
+                </H1>
+                <H2>
+                  Đón hoàn hôn trên hồ
+                </H2>
+                <p className='pt-4 text-white sm:text-black'>
+                  Tham quan cung hoa Mua Tím lung linh của khu du lịch Long Đỉnh, những đồ chè sát hồ đẹp nhất huyện Lâm Hà, những vườn café hoa trắng xóa và cuối cùng là màn trình diễn ánh sáng HOÀNG HÔN hoành tráng nhất trên mặt hồ nước ngọt lớn nhất huyện Lâm Hà.
+                </p>
+                <p className='pt-4 text-white sm:text-black'>
+                  Bạn sẽ có những phút giây vui vẻ nhất và những shots hình ảo ma Lazada nhất mạng xã hội.
+                </p>
+                <p className='pt-4 text-white sm:text-black'>
+                  Tour này phù hợp cho các bạn mới tập chơi sup và nhóm bạn trẻ.
+                </p>
+              </Section>
+              <Section id='toursandlessions3'
+                src='/img_sup_coban.jpg'
+                alt='image co ban'
+              >
+                <H1>
+                  Hồ Phú Thọ
+                </H1>
+                <H2>
+                  Chèo SUP cơ bản
+                </H2>
+                <p className='pt-4 text-white sm:text-black'>
+                  Các bạn sẽ được hướng dẫn cách chơi sup và những kỹ năng an toàn khi chơi bộ môn này,
+                </p>
+                <p className='pt-4 text-white sm:text-black'>
+                  Ngoài ra các bạn cũng học được cách ngồi, quỳ và đứng trên sup để có thể có được trải nghiệm thú vị nhất và có những shot hình đẹp nhất.
+                </p>
+              </Section>
+              <Section id='toursandlessions4'
+                src='/img_sup_nangcao.jpg'
+                alt='image landing page 2'
+              >
+                <H1>
+                  Hồ Phú Thọ
+                </H1>
+                <H2>
+                  Chèo SUP nâng cao
+                </H2>
+                <p className='pt-4 text-white sm:text-black'>
+                  Các bạn sẽ được tập đứng trên mặt nước không cân bằng, tập các skill bốc đầu sup, nhảy santo, bẻ lái nhanh, đứng dọc sup,….
+                </p>
+                <p className='pt-4 text-white sm:text-black'>
+                  Và hấp dẫn nhất là giải đua Sup dưới hoàng hôn hồ Phúc Thọ
+                </p>
+              </Section>
+              <Section id='toursandlessions5'
+                src='/img_landing_2.jpg'
+                alt='image landing page 2'>
+                <H1>
+                  Hồ Phú Thọ
+                </H1>
+                <H2>
+                  Khám phá hồ phú thọ
+                </H2>
+                <p className='pt-4 text-white sm:text-black'>
+                  Cùng tham quan vẻ đẹp hung vĩ nhất của hồ nước ngọt lớn nhất Lâm Hà
+                </p>
+                <p className='pt-4 text-white sm:text-black'>
+                  Các bạn sẽ được khám phá những góc đẹp nhất của hồ này và nếu may mắn các bạn có thể vào vườn trái cây ven hồ để hái và mua trái cây tại vườn
+                </p>
+              </Section>
             </div >
           </div >
       }
