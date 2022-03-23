@@ -5,11 +5,32 @@ import { H1, H2 } from '../components'
 const videoPoster = 'intro.jpg'
 
 const NavItem = props => (
-  <li className={`px-2 py-4 hover:bg-black hover:bg-opacity-50 hover:text-white transition-all duration-300 cursor-pointer ${props.className}`}>
-    <a href={props.href}>
+  <a href={props.href}>
+    <li className={`px-2 py-4 hover:bg-black hover:bg-opacity-50 hover:text-white transition-all duration-300 cursor-pointer ${props.className}`}>
       {props.text}
-    </a>
-  </li>
+    </li>
+  </a>
+)
+
+const ImageSection = ({ src, alt }) => (
+  <div className='w-full h-full absolute top-0 right-0 -z-10
+                  transition-all
+                  duration-500
+                  before:content-[""] before:bg-black before:w-full 
+                  before:h-full before:block before:absolute before:t-0 before:l-0
+                  before:bg-opacity-30 before:rounded-3xl before:z-10
+                  sm:before:content-none
+                  sm:section-content
+                  sm:hover:scale-105
+                  '>
+    <NextImage
+      layout="fill"
+      objectFit="cover"
+      className='rounded-3xl'
+      src={src}
+      alt={alt}
+    />
+  </div>
 )
 
 
@@ -79,23 +100,30 @@ export default function Home() {
           :
           <div>
             <div className='relative w-screen h-screen' >
-              <nav ref={navRef} className='flex backdrop-blur-sm absolute w-full mx-auto py-4 sm:py-0 flex-row justify-between items-center z-50 transition-all'>
+              <nav ref={navRef} className='flex backdrop-blur-sm absolute w-full mx-auto 
+              py-4 sm:py-0 flex-row justify-between items-center z-50 transition-all'>
                 <NextLink href='/#' passHref={true} >
-                  <div className='relative ml-4 rounded-full flex flex-center bg-amber-400 bg-opacity-50 cursor-pointer hover:bg-amber-500 hover:scale-125 transition-all'>
+                  <div className='relative ml-4 rounded-full flex flex-center 
+                  bg-amber-400 bg-opacity-50 cursor-pointer 
+                  hover:bg-amber-500 hover:scale-125 transition-all'>
                     <NextImage width='100px' height='30px' src='/logo.png' alt='logo' />
                   </div>
                 </NextLink>
                 <button className='mr-4 sm:hidden relative w-[25px] h-[25px] z-50' onClick={handleClickBread}>
-                  <span ref={breadRef} className='w-full h-[2px] bg-black block transition-all
+                  <span ref={breadRef} className='w-full h-[2px] bg-black block transition-all duration-400
                   before:content-[""] before:w-[125%] before:h-[2px]
                   before:bg-black before:absolute before:top-0 before:right-0
-                  before:transition-all
+                  before:transition-all before:duration-400
                   after:content-[""] after:w-[75%] after:h-[2px] after:bg-black 
                   after:absolute after:bottom-0 after:right-0
-                  after:transition-all'
+                  after:transition-all after:duration-400'
                   ></span>
                 </button>
-                <ul ref={listMenuRef} className='absolute top-0 w-full flex transition-all -translate-y-full sm:mr-4 sm:translate-y-0 sm:relative sm:w-auto sm:flex flex-col items-center justify-center gap-2 sm:flex-row'>
+                <ul ref={listMenuRef} className='absolute top-0 w-full 
+                flex transition-all -translate-y-full duration-400 
+                sm:mr-4 sm:translate-y-0 sm:relative sm:w-auto sm:flex 
+                flex-col items-center justify-center gap-2 sm:flex-row
+                '>
                   <NavItem href='#toursandlessions' text="Tours & Lessons"></NavItem>
                   <NavItem href='#whatissup' text="About us"></NavItem>
                   <NavItem href='#Product' text="Contact"></NavItem>
@@ -117,71 +145,120 @@ export default function Home() {
                 sm:py-0 sm:px-0 sm:gap-20 sm:flex-row' >
                   <div className='text-right z-10 sm:flex-1'>
                     <H1>
-                      PRIVATE MAUI SURF & SUP LESSONS
+                      Hồ Phú Thọ
                     </H1>
                     <H2>
-                      Your adventure begins here
+                      Săn sương caffe sáng
                     </H2>
-                    <p className='pt-4 text-white sm:text-black'>
-                      We are Maui’s premier ocean activity company and take great pride in offering top-rated, private tours and lessons including Outrigger Canoe and Kayak Tours, Whale Watching, Snorkeling with Turtles, Surfing lessons and Stand Up Paddle Boarding Lessons.
+                    <p className='pt-4 text-white sm:text-black '>
+                      Chèo thuyền trên độ cao 900m trong làn sương mờ ảo của hồ nước ngọt lớn nhất Huyện Lâm Hà.
                     </p>
                     <p className='pt-4 text-white sm:text-black'>
-                      You can escape from the crowds and experience Maui from a local perspective. Most people come to Maui for this very reason—to really get away.
+                      Café sáng đón những tia nắng đầu tiên của ngày mới. Tour này thích hợp với những bạn chưa hề biết chèo Sup bởi vì mặt hồ lặng như gương, nhẹ nhàng, quyến rũ.
                     </p>
                   </div>
-                  <div className='w-full h-full absolute top-0 right-0 -z-10
-                                transition-all
-                                before:content-[""] before:bg-black before:w-full 
-                                before:h-full before:block before:absolute before:t-0 before:l-0
-                                before:bg-opacity-30 before:rounded-3xl before:z-10
-                                sm:before:content-none
-                                sm:section-content'>
-                    <NextImage
-                      layout="fill"
-                      objectFit="cover"
-                      className='rounded-3xl'
-                      src='/img_landing_1.jpg'
-                      alt='image landing page 1'
-                    />
+                  <ImageSection
+                    src='/img_landing_1.jpg'
+                    alt='image landing page 1'
+                  />
+                </div>
+              </section>
+              <section id='toursandlessions2' className='pt-10  w-11/12 m-auto sm:pt-40 sm:w-2/3'>
+                <div className='flex flex-col relative gap-4 py-10 px-2 
+                sm:py-0 sm:px-0 sm:gap-20 sm:flex-row' >
+                  <ImageSection
+                    src='/img_hoanhon.jpg'
+                    alt='image hoan hon'
+                  />
+                  <div className='flex-1 text-left'>
+                    <H1>
+                      Hồ Phú Thọ
+                    </H1>
+                    <H2>
+                      Đón hoàn hôn trên hồ
+                    </H2>
+                    <p className='pt-4 text-white sm:text-black'>
+                      Tham quan cung hoa Mua Tím lung linh của khu du lịch Long Đỉnh, những đồ chè sát hồ đẹp nhất huyện Lâm Hà, những vườn café hoa trắng xóa và cuối cùng là màn trình diễn ánh sáng HOÀNG HÔN hoành tráng nhất trên mặt hồ nước ngọt lớn nhất huyện Lâm Hà.
+                    </p>
+                    <p className='pt-4 text-white sm:text-black'>
+                      Bạn sẽ có những phút giây vui vẻ nhất và những shots hình ảo ma Lazada nhất mạng xã hội.
+                    </p>
+                    <p className='pt-4 text-white sm:text-black'>
+                      Tour này phù hợp cho các bạn mới tập chơi sup và nhóm bạn trẻ.
+                    </p>
                   </div>
                 </div>
               </section>
-              <section id='whatissup' className='pt-10  w-11/12 m-auto sm:pt-40 sm:w-2/3'>
+              <section id='toursandlessions3' className='pt-10 sm:pt-40  w-11/12 m-auto sm:w-2/3'>
                 <div className='flex flex-col relative gap-4 py-10 px-2 
                 sm:py-0 sm:px-0 sm:gap-20 sm:flex-row' >
-                  <div className='w-full h-full absolute top-0 right-0 -z-10
-                                transition-all
-                                before:content-[""] before:bg-black before:w-full 
-                                before:h-full before:block before:absolute before:t-0 before:l-0
-                                before:bg-opacity-30 before:rounded-3xl before:z-10
-                                sm:before:content-none
-                                sm:section-content'>
-                    <NextImage
-                      layout="fill"
-                      objectFit="cover"
-                      className='rounded-3xl'
-                      src='/img_landing_2.jpg'
-                      alt='image landing page 2'
-                    />
-                  </div>
-                  <div className='flex-1 text-left'>
+                  <div className='text-right z-10 sm:flex-1'>
+                    <H1>
+                      Hồ Phú Thọ
+                    </H1>
                     <H2>
-                      Stand Up Paddle Boarding
+                      Chèo SUP cơ bản
                     </H2>
                     <p className='pt-4 text-white sm:text-black'>
-                      Stand up paddle boarding on Maui is a great way to explore Maui’s scenic coasts and bays. Choose from one of two amazing locations—Olowalu or Makena—each offering a unique experience and view of Maui. We realize that everyone comes from different backgrounds, with different fitness and comfort levels in the ocean, which is why we offer exclusive and PRIVATE Stand Up Paddle Board (SUP) Tours.
+                      Các bạn sẽ được hướng dẫn cách chơi sup và những kỹ năng an toàn khi chơi bộ môn này,
                     </p>
                     <p className='pt-4 text-white sm:text-black'>
-                      With our private tours, you will be able to stand up paddle as far and as fast as your ability allows, without feeling like you’re being held back or holding others back. Or, if you choose, just leisurely cruise around and check out numerous Hawaiian green sea turtles that swim by.
-                    </p>
-                    <p className='pt-4 text-white sm:text-black'>
-                      FREE digital photography included
-                    </p>
-                    <p className='pt-4 text-white sm:text-black'>
-                      Our stand up paddle instructors will take photos, so you can relax and enjoy your morning on the water.
+                      Ngoài ra các bạn cũng học được cách ngồi, quỳ và đứng trên sup để có thể có được trải nghiệm thú vị nhất và có những shot hình đẹp nhất.
                     </p>
                   </div>
-
+                  <ImageSection
+                    src='/img_sup_coban.jpg'
+                    alt='image co ban'
+                  />
+                </div>
+              </section>
+              <section id='toursandlessions4' className='pt-10 w-11/12 m-auto sm:pt-40 sm:w-2/3'>
+                <div className='flex flex-col relative gap-4 py-10 px-2 
+                sm:py-0 sm:px-0 sm:gap-20 sm:flex-row' >
+                  <ImageSection
+                    src='/img_sup_nangcao.jpg'
+                    alt='image landing page 2'
+                  />
+                  <div className='flex-1 text-left'>
+                    <H1>
+                      Hồ Phú Thọ
+                    </H1>
+                    <H2>
+                      Chèo SUP nâng cao
+                    </H2>
+                    <p className='pt-4 text-white sm:text-black'>
+                      Các bạn sẽ được tập đứng trên mặt nước không cân bằng, tập các skill bốc đầu sup, nhảy santo, bẻ lái nhanh, đứng dọc sup,….
+                    </p>
+                    <p className='pt-4 text-white sm:text-black'>
+                      Và hấp dẫn nhất là giải đua Sup dưới hoàng hôn hồ Phúc Thọ
+                    </p>
+                  </div>
+                </div>
+              </section>
+              <section id='toursandlessions5' className='pt-10 sm:pt-40  w-11/12 m-auto sm:w-2/3'>
+                <div className='flex flex-col relative gap-4 py-10 px-2 
+                sm:py-0 sm:px-0 sm:gap-20 sm:flex-row' >
+                  <div className='text-right z-10 sm:flex-1'>
+                    <H1>
+                      Hồ Phú Thọ
+                    </H1>
+                    <H2>
+                      Khám phá hồ phú thọ
+                    </H2>
+                    <p className='pt-4 text-white sm:text-black'>
+                      Cùng tham quan vẻ đẹp hung vĩ nhất của hồ nước ngọt lớn nhất Lâm Hà
+                    </p>
+                    <p className='pt-4 text-white sm:text-black'>
+                      Các bạn sẽ được khám phá những góc đẹp nhất của hồ này và nếu may mắn các bạn có thể vào vườn trái cây ven hồ để hái và mua trái cây tại vườn
+                    </p>
+                  </div>
+                  <ImageSection
+                    layout="fill"
+                    objectFit="cover"
+                    className='rounded-3xl'
+                    src='/img_landing_2.jpg'
+                    alt='image landing page 2'
+                  />
                 </div>
               </section>
             </div >
