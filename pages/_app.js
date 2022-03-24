@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/globals.css'
 import Head from 'next/head'
-import { Footer } from '../components'
+import { Footer, Navbar } from '../components'
 
 
 function MyApp({ Component, pageProps }) {
@@ -10,6 +10,7 @@ function MyApp({ Component, pageProps }) {
     <Head>
       <title>Chèo Trên Núi</title>
     </Head>
+    <Navbar></Navbar>
     <Component {...pageProps} />
     <Footer />
   </>)

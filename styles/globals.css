@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    scroll-behavior: smooth;
+    scroll-behavior: mdooth;
   }
 }
 
@@ -31,12 +31,16 @@
   }
 
   .section-wrapper {
-    @apply pt-40 w-11/12 m-auto sm:w-2/3 flex flex-col relative gap-4 py-10 px-2
-    sm:py-0 sm:px-0 sm:gap-20 sm:even:flex-row sm:odd:flex-row-reverse text-left mt-20 first:mt-20 sm:mt-20 sm:pt-20;
+    @apply pt-40 w-11/12 m-auto sm:w-11/12 lg:w-4/5 flex flex-col relative gap-4 py-10 px-2
+    text-left mt-20 
+    md:py-0 md:px-0 md:gap-10 lg:gap-20 md:even:flex-row 
+    md:odd:flex-row-reverse 
+    first:mt-20  md:mt-20 md:pt-20;
   }
 
-  .section-wrapper:nth-child(even) > .section-content {
-    @apply text-right;
+  .section-wrapper:nth-child(even) > .section-content,
+  .section-wrapper:nth-child(even) > .section-content > button {
+    @apply text-right md:flex md:flex-col md:items-end;
   }
 }
 
@@ -44,8 +48,14 @@ html,
 body {
   padding: 0;
   margin: 0;
+  scroll-behavior: smooth;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+#__next {
+  height: 100%;
+  width: 100%;
 }
 
 a {
