@@ -45,7 +45,7 @@ export const Navbar = () => {
   return (
     <nav ref={navRef} className='flex backdrop-blur-md absolute w-full mx-auto 
     py-4 md:py-0 flex-row justify-between items-center z-50 transition-all'>
-      <Link href='/#' passHref={true} >
+      <Link href='../#' passHref={true} >
         <div className='relative ml-4 rounded-full flex flex-center 
         bg-amber-400 bg-opacity-50 cursor-pointer 
         hover:bg-amber-500 hover:scale-125 transition-all'>
@@ -67,9 +67,9 @@ export const Navbar = () => {
       md:mr-4 md:translate-y-0 md:relative md:w-auto md:flex 
       flex-col items-center justify-center gap-2 md:flex-row
       '>
+        <NavItem href='../#whatissup' text="What is SUP"></NavItem>
         <NavItem href='../#toursandlessions' text="Tours & Lessons"></NavItem>
-        <NavItem href='../#whatissup' text="About us"></NavItem>
-        <NavItem href='../#Product' text="Contact"></NavItem>
+        <NavItem href='../#contact' text="Contact"></NavItem>
         <NavItem href='../#' className='text-red-400' text="Book now"></NavItem>
       </ul>
     </nav>

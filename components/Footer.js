@@ -63,17 +63,17 @@ export const Footer = () => {
         </div>
         <div className='flex flex-row gap-4 text-xs sm:text-sm'>
           <span>
-            <Link href='/#toursandlessions' passHref={true} >
+            <Link href='../#whatissup' passHref={true} >
+              What is SUP
+            </Link>
+          </span> |
+          <span>
+            <Link href='../#toursandlessions' passHref={true} >
               Tours & Lessons
             </Link>
           </span> |
           <span>
-            <Link href='/#whatissup' passHref={true} >
-              About us
-            </Link>
-          </span> |
-          <span>
-            <Link href='/#' passHref={true} >
+            <Link href='../#contact' passHref={true} >
               Contact
             </Link>
           </span> |

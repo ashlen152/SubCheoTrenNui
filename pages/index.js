@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react'
 import NextImage from 'next/image'
 import { H1, H2, Section } from '../components'
+import ImageSlider from '../components/ImageSlider'
 const videoPoster = 'intro.jpg'
 
 const Loading = () => {
@@ -26,6 +27,8 @@ export default function Home() {
 
   }, [])
 
+  const images = ['/img_landing_1.jpg', '/img_landing_2.jpg', '/img_hoanhon.jpg']
+
   return (
     <>
       {
@@ -44,6 +47,31 @@ export default function Home() {
               </video>
             </div>
             <div className='w-full flex-row'>
+              <Section
+                id='whatissup'
+                src='/bg_footer.jpg'
+                alt='what is sup'
+              >
+                <H1>
+                  SUP Là Gì
+                </H1>
+                <H2>
+                  Chèo Trên Núi
+                </H2>
+                <p className='pt-4 text-white md:text-black '>
+                  Chèo SUP Là Gì? Giải Mã Môn Thể Thao Chill Ơi Là Chill
+                  Chèo thuyền trên độ cao 900m trong làn sương mờ ảo của hồ nước ngọt lớn nhất Huyện Lâm Hà.
+                </p>
+                <p className='pt-4 text-white md:text-black'>
+                  SUP – Stand-up Paddleboarding được gọi là môn “chèo ván đứng”, “ván lướt sóng có mái chèo”, hoặc đơn giản là “chèo SUP”. Môn chèo SUP hiện đại bắt nguồn từ Hawaii vào những năm 1900 và được yêu thích trên toàn thế giới bởi sự đơn giản, tiện lợi của nó. Bạn không cần phải biết bơi, mà chỉ cần nắm vững một số kỹ thuật chèo cơ bản là có thể di chuyển ổn định trên mặt nước được rồi.
+                  Ngoài việc đứng, ngồi thì bạn có thể quỳ, nằm thư giãn trên ván, kết hợp với yoga hoặc câu cá, miễn là sử dụng mái chèo cho ván chuyển động. Bởi thế, chèo SUP không chỉ là một trò chơi giải trí mà còn là môn thể thao rèn luyện sức khỏe cực kỳ tốt, phù hợp cho mọi lứa tuổi.
+                  Bạn có thể chèo SUP trên nhiều loại mặt nước khác nhau như: hồ, sông, vịnh, thác, và cả biển – nơi có nhiều sóng. Ván chèo của bộ môn này cũng được chế tạo từ nhiều chất liệu khác nhau, nhưng phổ biến nhất Việt Nam hiện nay là SUP bơm hơi. Với một chiếc ba lô đầy đủ ván chèo, ống bơm và phụ kiện, bạn có thể tự tin chinh phục mặt nước được rồi.
+                  Vì Sao Bạn Nên Đi Chèo SUP Một Lần Trong Đời?
+                </p>
+              </Section>
+              <section className="section-wrapper !mt-0">
+                <ImageSlider images={images}></ImageSlider>
+              </section>
               <Section
                 id='toursandlessions'
                 src='/sup01_1080.jpg'

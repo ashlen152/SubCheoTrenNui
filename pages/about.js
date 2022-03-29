@@ -3,7 +3,7 @@ import { Link, Image } from 'next'
 
 const about = () => {
   return (
-    <div>About</div>
+    <div>SUP Là Gì</div>
   )
 }
 
