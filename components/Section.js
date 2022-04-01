@@ -36,7 +36,7 @@ export const Section = ({ id, src, alt, children, href }) => (
           md:hover:border-red-600 md:hover:text-white
           w-fit
           md:bg-transparent md:border-gray-400 md:text-black'>
-            More Information
+            Thông tin chi tiết
           </a>
         </Link>
       }

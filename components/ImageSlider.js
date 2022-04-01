@@ -6,7 +6,6 @@ const ImageSlider = ({images}) => {
   const [indexActiveImage, setIndexActiveImage] = useState(0)
 
   useEffect(() => {
-    console.log('test')
     const timeout = setInterval(() => {
       handleOnClickNextImage('next', indexActiveImage)
     }, 5000)
@@ -15,14 +14,12 @@ const ImageSlider = ({images}) => {
   }, [handleOnClickNextImage, indexActiveImage])
 
   const handleOnClickNextImage = useCallback((type, index) => {
-    console.log(type,index)
     const nextIndex = index + (type === 'next' ? 1 : -1)
     if (nextIndex >= images.length)
       nextIndex = 0
     else if (nextIndex < 0)
       nextIndex = images.length - 1
     setIndexActiveImage(nextIndex)
-    console.log(nextIndex)
   }, [images.length])
 
 
@@ -32,12 +29,15 @@ const ImageSlider = ({images}) => {
         {images.map((imgUrl, index) => {
           return (<div key={index} className={`absolute top-0 right-0 transition-all duration-500 w-full h-full 
           ${index === indexActiveImage ? 'opacity-100' : 'opacity-0'}`}>
+            <div className='relative w-full h-full'>
             <Image
-              height='500px'
+              priority
               layout='fill'
               objectFit='cover'
               className='rounded '
               src={imgUrl} alt='logo' />
+
+            </div>
           </div>)
         })}
       </div>

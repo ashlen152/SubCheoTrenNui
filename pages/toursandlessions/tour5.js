@@ -7,7 +7,7 @@ const tour5 = () => {
     <div>
       <div className="relative w-full h-screen">
         <div className='absolute top-0 left-0 w-full h-full -z-10'>
-          <Image src="/sup05.jpg"
+          <Image priority src="/sup05.jpg"
             alt='landing 2' layout="fill" objectFit='cover'>
           </Image>
         </div>

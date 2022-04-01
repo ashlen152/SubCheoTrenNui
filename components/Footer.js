@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Phone } from './Phone'
+import { Links } from './Links'
 
 export const Footer = () => {
   return (
@@ -10,7 +11,7 @@ export const Footer = () => {
     sm:py-0 sm:gap-0text-center'>
       <div className='flex flex-col'>
         <div className='flex flex-col w-full justify-center sm:flex-row sm:py-6'>
-          <div className='image-container sm:w-60'>
+          <div className='image-container  sm:w-60'>
             <Image src='/banner.png' alt='footer banner' layout='responsive' width='1200' height='400' />
           </div>
         </div>
@@ -19,7 +20,7 @@ export const Footer = () => {
             Chèo Trên Núi
           </span>
           <span>
-            Tân Hà - Lâm Động
+            Tân Hà - Lâm Đồng
           </span>
         </div>
         <div className='flex flex-col mt-4'>
@@ -63,29 +64,26 @@ export const Footer = () => {
         </div>
         <div className='flex flex-row gap-4 text-xs sm:text-sm'>
           <span>
-            <Link href='../#whatissup' passHref={true} >
-              What is SUP
+            <Link href='/#whatissup' passHref={true} >
+              SUP là gì
             </Link>
           </span> |
           <span>
-            <Link href='../#toursandlessions' passHref={true} >
-              Tours & Lessons
+            <Link href='/#toursandlessions' passHref={true} >
+              Tours & Khoá Học
             </Link>
           </span> |
           <span>
-            <Link href='../#contact' passHref={true} >
-              Contact
-            </Link>
-          </span> |
-          <span>
-            <Link href='/#' passHref={true} >
-              Book now
+            <Link href='#contact' passHref={true} >
+              Liên lạc
             </Link>
           </span>
         </div>
       </div>
       <div className='absolute top-0 left-0 w-full h-full -z-10'>
-        <Image src="/bg_footer.jpg" alt="bg footer" layout='fill' objectFit='cover' />
+        <div className='relative w-full h-full'>
+          <Image src="/bg_footer.jpg" priority alt="bg footer" layout='fill' objectFit='cover' />
+        </div>
       </div>
     </footer>
   )

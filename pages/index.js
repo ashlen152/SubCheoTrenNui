@@ -78,7 +78,7 @@ export default function Home() {
                 alt='image landing page 1'
                 href='toursandlessions/tour1' >
                 <H1>
-                  Hồ Phú Thọ
+                  Hồ Phúc Thọ
                 </H1>
                 <H2>
                   Săn Sương Caffe Sáng
@@ -96,7 +96,7 @@ export default function Home() {
                 href='toursandlessions/tour2'
               >
                 <H1>
-                  Hồ Phú Thọ
+                  Hồ Phúc Thọ
                 </H1>
                 <H2>
                   Đón Hoàn Hôn Trên Hồ
@@ -117,7 +117,7 @@ export default function Home() {
                 href='toursandlessions/tour3'
               >
                 <H1>
-                  Hồ Phú Thọ
+                  Hồ Phúc Thọ
                 </H1>
                 <H2>
                   Chèo SUP Cơ Bản
@@ -135,7 +135,7 @@ export default function Home() {
                 href='toursandlessions/tour4'
               >
                 <H1>
-                  Hồ Phú Thọ
+                  Hồ Phúc Thọ
                 </H1>
                 <H2>
                   Chèo SUP Nâng Cao
@@ -152,10 +152,10 @@ export default function Home() {
                 alt='image landing page 2'
                 href='toursandlessions/tour5'>
                 <H1>
-                  Hồ Phú Thọ
+                  Hồ Phúc Thọ
                 </H1>
                 <H2>
-                  Khám Phá Hồ Phú Thọ
+                  Khám Phá Hồ Phúc Thọ
                 </H2>
                 <p className='pt-4 text-white md:text-black'>
                   Cùng tham quan vẻ đẹp hung vĩ nhất của hồ nước ngọt lớn nhất Lâm Hà
